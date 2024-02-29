@@ -5,7 +5,7 @@ async function connect(){
     const mongod = await MongoMemoryServer.create();
     const getUri = mongod.getUri();
 
-    mongoose.set('strict')
+    mongoose.set('strictQuery', true)
     const db = await mongoose.connect(getUri);
     console.log("Database Connected")
     return db;
